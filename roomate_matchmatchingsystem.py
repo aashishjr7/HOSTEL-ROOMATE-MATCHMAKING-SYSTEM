@@ -1,21 +1,20 @@
 import itertools
 
-# Define the survey questions and possible answers
 survey_questions = {
     "sleep_schedule": ["Early riser", "Night owl"],
     "study_preference": ["Silence", "Group study"],
     "noise_tolerance": ["Low", "Medium", "High"],
-    "personality_type": ["Introvert", "Extrovert"],
-    "geographical_compatibility": ["Same hometown", "Doesn't matter"],
+    "personality_type": ["Introvert", "Extrovert","ambivert],
+    "geographical_compatibility": ["Same area", "Doesn't matter"],
     "cultural_preference": ["Same cultural/religious background", "Doesn't matter"],
     "food_preference": ["Same food mess", "Doesn't matter"],
     "academic_preference": ["Same course/class", "Doesn't matter"],
     "room_temperature_preference": ["Cold", "Hot"],
     "leisure_interests": ["Sports", "Gaming", "Movies", "Other hobbies"],
-    "entertainment_style": ["Loud", "Relaxed"]
+    "entertainment_style": ["Loud", "Relaxed"],
+    "upperorlower_sleepberth": ["upper", "lower"]
 }
 
-# Collect user input
 def collect_user_data():
     print("Welcome to the Hostel Roommate Matchmaking System!")
     user_data = {}
@@ -28,7 +27,6 @@ def collect_user_data():
         choice = int(input(f"Select your choice (1-{len(options)}): "))
         user_data[key] = options[choice - 1]
     
-    # Collect priority rankings
     print("\nNow rank the importance of these preferences from 1 (most important) to 10 (least important):")
     preferences = list(survey_questions.keys())
     for i, pref in enumerate(preferences, 1):
@@ -42,7 +40,7 @@ def collect_user_data():
     
     return user_data
 
-# Calculate compatibility score between two users
+
 def calculate_score(user1, user2):
     score = 0
     for key in survey_questions.keys():
@@ -50,7 +48,7 @@ def calculate_score(user1, user2):
             score += user1["rankings"].index(key) + 1
     return score
 
-# Match users based on their preferences
+
 def match_users(users):
     matches = []
     for user1, user2 in itertools.combinations(users, 2):
@@ -59,7 +57,7 @@ def match_users(users):
     matches.sort(key=lambda x: x[2], reverse=True)
     return matches
 
-# Main program
+
 if __name__ == "__main__":
     users = []
     print("Enter data for 2 or more users.")
