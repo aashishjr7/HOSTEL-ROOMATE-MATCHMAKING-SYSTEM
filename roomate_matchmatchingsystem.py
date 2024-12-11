@@ -1,18 +1,18 @@
 import itertools
 
 survey_questions = {
+    "upperorlower_sleepberth": ["upper", "lower"]
     "sleep_schedule": ["Early riser", "Night owl"],
     "study_preference": ["Silence", "Group study"],
     "noise_tolerance": ["Low", "Medium", "High"],
-    "personality_type": ["Introvert", "Extrovert","ambivert],
+    "personality_type": ["Introvert", "Extrovert","ambivert"],
     "geographical_compatibility": ["Same area", "Doesn't matter"],
-    "cultural_preference": ["Same cultural/religious background", "Doesn't matter"],
+    "cle": ["Loudultural_preference": ["Same cultural/religious background", "Doesn't matter"],
     "food_preference": ["Same food mess", "Doesn't matter"],
     "academic_preference": ["Same course/class", "Doesn't matter"],
     "room_temperature_preference": ["Cold", "Hot"],
     "leisure_interests": ["Sports", "Gaming", "Movies", "Other hobbies"],
-    "entertainment_style": ["Loud", "Relaxed"],
-    "upperorlower_sleepberth": ["upper", "lower"]
+    "entertainment_sty", "Relaxed"],
 }
 
 def collect_user_data():
